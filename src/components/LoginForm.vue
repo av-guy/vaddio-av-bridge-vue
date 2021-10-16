@@ -4,6 +4,7 @@
       class="vc-full-height vc-login-form">
       <div class="vc-login-input-container">
         <h2 class="vc-login-header vc-text-center">Welcome</h2>
+        <i class="fa fa-microchip fa-4x vc-login-icon" aria-hidden="true"></i>
 
         <!-- Username Input -->
 

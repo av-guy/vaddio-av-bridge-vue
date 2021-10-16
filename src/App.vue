@@ -3,6 +3,8 @@
 </template>
 
 <style>
+@import url("./fonts/font-awesome-4.7.0/css/font-awesome.css");
+
 @font-face {
   font-family: Poppins-Regular;
   src: url('./fonts/poppins/Poppins-Regular.ttf');

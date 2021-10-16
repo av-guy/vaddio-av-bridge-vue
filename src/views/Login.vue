@@ -81,11 +81,19 @@ export default {
   padding-top: 15px;
 }
 
+.vc-login-icon {
+  display: block;
+  margin-left: 43%;
+  margin-bottom: 45px;
+}
+
 .vc-login-input-container {
   background-color: white;
   border-radius: 5px;
   width: 100%;
   height: 95%;
+  padding-left: 20px;
+  padding-right: 20px;
   max-height: 650px;
   box-shadow: 1px 1px 15px #14110F;
   margin: auto;
