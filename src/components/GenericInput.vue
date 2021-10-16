@@ -5,6 +5,7 @@
     v-model="value"
     v-on:focusout="notify"
     v-bind:data-id="dataTag"
+    @keyup="notify"
   >
 </template>
 
@@ -55,19 +56,24 @@ export default {
     }
   },
   methods: {
-    /*
-    * Called when focusout is triggered
-    */
-    notify() {
-      this.$emit("IsValid", this.isValid);
-    }
+    __isMatch() {
+      return this.value.match(this.regex) !== null;
+    },
+    notify(evt) {
+      let onKeyUpEvent = evt.type == 'keyup' && this.onKeyUp;
+      let focusOutEvent = evt.type == 'focusout';
+      let backSpaceEvent = evt.key == 'Backspace' && !this.__isMatch();
+      if (onKeyUpEvent || focusOutEvent || backSpaceEvent) {
+        this.$emit("IsValid", this.isValid);
+      }
+    },
   },
   computed: {
     /**
     * Computes whether or not this.value is a match for the regex prop
     */
     isValid: function() {
-      if (this.value.match(this.regex) !== null) {
+      if (this.__isMatch()) {
         return this.value;
       } else {
         return null;
