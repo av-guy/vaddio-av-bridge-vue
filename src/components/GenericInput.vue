@@ -5,6 +5,7 @@
     v-model="value"
     v-on:focusout="notify"
     v-bind:data-id="dataTag"
+    v-on:focusin="trigger"
     @keyup="notify"
   >
 </template>
@@ -59,9 +60,15 @@ export default {
     __isMatch() {
       return this.value.match(this.regex) !== null;
     },
+    trigger() {
+      this.$emit('FocusedIn', true);
+    },
     notify(evt) {
       let onKeyUpEvent = evt.type == 'keyup' && this.onKeyUp;
       let focusOutEvent = evt.type == 'focusout';
+      if (focusOutEvent) {
+        this.$emit('FocusedIn', false);
+      }
       let backSpaceEvent = evt.key == 'Backspace' && !this.__isMatch();
       if (onKeyUpEvent || focusOutEvent || backSpaceEvent) {
         this.$emit("IsValid", this.isValid);

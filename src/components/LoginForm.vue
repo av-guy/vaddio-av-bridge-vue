@@ -1,46 +1,56 @@
 <template>
-  <form @submit.prevent="login">
-    <h2>Login</h2>
+  <div class="vc-login-form-container vc-full-height">
+    <form @submit.prevent="login"
+      class="vc-full-height vc-login-form">
+      <div class="vc-login-input-container">
+        <h2 class="vc-login-header vc-text-center">Welcome</h2>
 
-    <!-- Username Input -->
+        <!-- Username Input -->
 
-    <GenericInput
-      type="email"
-      v-bind:regex="emailRegex"
-      dataTag="vad-ctrl-username"
-      placeholder="Email"
-      v-on:IsValid="handleEmail"
-      class="vad-ctrl-input vad-ctrl-email"
-    />
+        <label class="vc-login-label">E-mail</label>
+        <GenericInput
+          type="email"
+          v-bind:regex="emailRegex"
+          dataTag="vc-username"
+          placeholder="Email"
+          v-on:IsValid="handleEmail"
+          class="vc-input vc-email-input"
+        />
 
-    <!-- Password Input -->
+        <!-- Password Input -->
 
-    <GenericInput
-      type="password"
-      v-bind:regex="passwordRegex"
-      dataTag="vad-ctrl-password"
-      placeholder="Password"
-      v-on:IsValid="handlePassword"
-      class="vad-ctrl-input vad-ctrl-email"
-      :on-key-up=true
-    />
+        <label class="vc-login-label">Password</label>
+        <GenericInput
+          type="password"
+          v-bind:regex="passwordRegex"
+          dataTag="vc-password"
+          placeholder="Password"
+          v-on:IsValid="handlePassword"
+          class="vc-input vc-password-input"
+          :on-key-up="true"
+        />
 
-    <!-- Login Button -->
+        <!-- Login Button -->
 
-    <FirebaseLoginButton
-      v-bind:email="email"
-      v-bind:password="password"
-      v-bind:notValidated="notValidated"
-      v-on:IsValidated="handleSuccess"
-    />
+        <FirebaseLoginButton
+          v-bind:email="email"
+          v-bind:password="password"
+          v-bind:notValidated="notValidated"
+          v-on:IsValidated="handleSuccess"
+          class="vc-login-button"
+        />
 
-    <!-- Error Message -->
+        <!-- Error Message -->
 
-    <ErrorMessage v-if="errorMessage"
-      v-bind:message="errorMessage"
-      dataTag="vad-ctrl-err"
-    />
-  </form>
+        <ErrorMessage v-if="errorMessage"
+          v-bind:message="errorMessage"
+          dataTag="vc-err"
+          class="vc-err-msg"
+        />
+
+        </div>
+      </form>
+  </div>
 </template>
 
 <script>
@@ -107,6 +117,9 @@ export default {
       } else {
         this.errorMessage = 'Incorrect Email or Password';
       }
+    },
+    triggerFocus(status) {
+        this.emailFocused = status;
     },
     /**
     * handleCredentials checks to see if the email and password are valid.

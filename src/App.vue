@@ -3,24 +3,43 @@
 </template>
 
 <style>
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('./fonts/poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('./fonts/poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('./fonts/poppins/Poppins-Bold.ttf');
+}
+
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url('./fonts/poppins/Poppins-SemiBold.ttf');
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  height: 100vh;
+  font-family: Poppins-Regular;
+  padding: 0;
+  margin: 0;
 }
 
-#nav {
-  padding: 30px;
+body {
+  padding: 0;
+  margin: 0;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+@keyframes autofill {
+  to {
+    color: inherit;
+    background: transparent;
+  }
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
