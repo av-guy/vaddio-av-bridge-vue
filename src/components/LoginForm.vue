@@ -43,11 +43,13 @@
 
         <!-- Error Message -->
 
-        <ErrorMessage v-if="errorMessage"
-          v-bind:message="errorMessage"
-          dataTag="vc-err"
-          class="vc-err-msg"
-        />
+        <transition name="fade">
+          <ErrorMessage v-if="errorMessage"
+            v-bind:message="errorMessage"
+            dataTag="vc-err"
+            class="vc-err-msg"
+          />
+        </transition>
 
         </div>
       </form>
@@ -174,3 +176,14 @@ export default {
   }
 }
 </script>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

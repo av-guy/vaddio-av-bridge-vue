@@ -1,6 +1,8 @@
 <template>
   <div class="err">
-    <span class="err-msg" v-bind:data-id="dataTag">{{message}}</span>
+    <span
+      class="err-msg"
+      v-bind:data-id="dataTag">{{message}}</span>
   </div>
 </template>
 
@@ -12,7 +14,12 @@ export default {
     dataTag: String
   },
   methods: {},
-  computed: {}
+  computed: {
+    visible() {
+      console.log(this.message, 'is message');
+      return this.message !== null;
+    }
+  }
 }
 </script>
 

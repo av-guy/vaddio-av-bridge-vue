@@ -47,19 +47,27 @@ export default {
 .vc-login-button {
   font-family: Poppins-Bold;
   padding: 15px;
-  background-color: #D16014;
+  background: linear-gradient(309deg, #AA4465, #255F85, #D16014);
+  background-size: 400% 400%;
+  background-position: 0%;
   margin-top: 45px;
   border-radius: 25px;
   width: 88%;
   border: none;
   left: 18%;
   color: white;
+  font-size: 20px;
   margin-left: 5%;
-  transition: background-color 1s ease-out;
+  transition: box-shadow 0.5s ease-in-out, opacity 0.5s ease-in, background-position 0.5s ease-in-out;
+}
+
+.vc-login-button:disabled {
+  opacity: 0.5;
 }
 
 .vc-login-button:focus {
-  background-color: #255F85;
+  background-position: 100% 15%;
+  box-shadow: 5px 5px 20px gray;
   outline: none;
 }
 
