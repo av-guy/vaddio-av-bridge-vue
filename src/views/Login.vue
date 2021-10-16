@@ -38,6 +38,7 @@ export default {
   background: linear-gradient(309deg, #e0e2db, #255f85, #d16014);
   background-size: 1000% 1000%;
   width: 100%;
+  min-height: 800px;
   -webkit-animation: FluidBG 30s ease infinite;
   -moz-animation: FluidBG 30s ease infinite;
   animation: FluidBG 30s ease infinite;
@@ -100,6 +101,7 @@ export default {
   border-radius: 5px;
   width: 100%;
   height: 95%;
+  min-height: 650px;
   padding-left: 20px;
   padding-right: 20px;
   max-height: 650px;

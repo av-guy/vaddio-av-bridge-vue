@@ -3,6 +3,7 @@
     v-bind:type="type"
     v-bind:name="placeholder"
     v-bind:placeholder="placeholder"
+    v-bind:id="placeholder"
     v-model="value"
     v-on:focusout="notify"
     v-bind:data-id="dataTag"

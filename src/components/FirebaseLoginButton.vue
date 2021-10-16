@@ -9,7 +9,7 @@
 <script>
 import {
   getAuth,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 /**
 * Responsible for managing signInWithEmailAndPassword Firebase Login
@@ -39,7 +39,7 @@ export default {
     */
     async login() {
       try {
-        let auth = getAuth()
+        const auth = getAuth();
         await signInWithEmailAndPassword(
           auth, this.email, this.password
         );

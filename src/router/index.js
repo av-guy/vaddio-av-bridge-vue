@@ -4,7 +4,8 @@ import {
 } from 'vue-router'
 import Login from '../views/Login.vue'
 import Application from "../views/Application.vue";
-import { getAuth } from "firebase/auth";
+import { getAuth } from 'firebase/auth';
+
 
 const routes = [{
     path: '/',
@@ -28,11 +29,11 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   let test = getAuth();
+  console.log(test.currentUser, 'is currentUser');
   if (to.matched.some(record => record.meta.authRequired)) {
     if (test.currentUser) {
       next();
     } else {
-      alert('You must be logged in to see this page');
       next({
         path: '/',
       });

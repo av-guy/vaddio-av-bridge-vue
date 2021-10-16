@@ -1,8 +1,9 @@
-import { createApp } from 'vue'
+import { createApp } from 'vue';
 import firebase from './credentials/firebase.config.js';
-import App from './App.vue'
-import router from './router'
+import App from './App.vue';
+import router from './router';
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
 
 const firebaseConfig = {
@@ -18,3 +19,11 @@ const firebaseConfig = {
 
 initializeApp(firebaseConfig);
 createApp(App).use(router).mount('#app');
+
+getAuth().onAuthStateChanged((user) => {
+  if (user) {
+    router.push('/app');
+  } else {
+    router.push('/');
+  }
+});
