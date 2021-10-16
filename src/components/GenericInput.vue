@@ -1,6 +1,7 @@
 <template>
   <input
     v-bind:type="type"
+    v-bind:name="placeholder"
     v-bind:placeholder="placeholder"
     v-model="value"
     v-on:focusout="notify"

@@ -8,7 +8,7 @@
 
         <!-- Username Input -->
 
-        <label class="vc-login-label">E-mail</label>
+        <label for="Email" class="vc-login-label">E-mail</label>
         <GenericInput
           type="email"
           v-bind:regex="emailRegex"
@@ -20,7 +20,7 @@
 
         <!-- Password Input -->
 
-        <label class="vc-login-label">Password</label>
+        <label for="Password" class="vc-login-label">Password</label>
         <GenericInput
           type="password"
           v-bind:regex="passwordRegex"
@@ -177,13 +177,13 @@ export default {
 }
 </script>
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s ease;
+  }
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
 </style>
