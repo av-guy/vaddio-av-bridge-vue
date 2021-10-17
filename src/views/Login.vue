@@ -47,7 +47,7 @@ export default {
 
 .vc-login-button {
   font-family: Poppins-Bold;
-  padding: 15px;
+  padding: 12px;
   background: linear-gradient(309deg, #AA4465, #255F85, #D16014);
   background-size: 400% 400%;
   background-position: 0%;
@@ -66,7 +66,7 @@ export default {
   opacity: 0.5;
 }
 
-.vc-login-button:focus {
+.vc-login-button:focus, .vc-login-button:hover {
   background-position: 100% 15%;
   box-shadow: 5px 5px 20px gray;
   outline: none;
