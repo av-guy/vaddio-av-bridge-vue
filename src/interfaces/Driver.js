@@ -1,7 +1,11 @@
 function setStatus(command, value, parameters) {
-  return null;
-};
+  return (command, value, parameters);
+}
 
-export default {
-  setStatus: setStatus
-};
+
+function getStatus(command, value, parameters) {
+  return (command, value, parameters);
+}
+
+
+export { setStatus, getStatus }

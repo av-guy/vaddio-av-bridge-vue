@@ -3,14 +3,15 @@
     type="range"
     :min="min"
     :max="max"
-    :value="half"
+    v-model="level"
     :data-id="dataTag"
   >
 </template>
 
 <script>
 import {
-  setStatus
+  setStatus,
+  getStatus
 } from '@/interfaces/Driver'
 /**
 * A volume slider that is responsible for sending Gain commands
@@ -18,6 +19,15 @@ import {
 */
 export default {
   name: 'VolumeSlider',
+  /**
+  * Sets the range slider to the device's current status.
+  */
+  mounted() {
+    this.level = getStatus(
+      this.command,
+      this.parameters
+    );
+  },
   data() {
     return {
       level: 0
@@ -43,18 +53,7 @@ export default {
     /**
     * Data ID for the volume slider
     */
-    dataTag: String,
-  },
-  computed: {
-    /**
-    * Watches the level in the range slider and sends the command for
-    * processing.
-    */
-    watchLevel() {
-      if (this.level >= this.min && this.level <= this.max) {
-        this.sendCommand();
-      }
-    }
+    dataTag: String
   },
   methods: {
     /**
@@ -68,7 +67,14 @@ export default {
       );
     }
   },
-  computed: {}
+  watch: {
+    /**
+    * Keeps level synchronized with the device.
+    */
+    synchronizeLevel() {
+      this.sendCommand();
+    }
+  }
 }
 </script>
 

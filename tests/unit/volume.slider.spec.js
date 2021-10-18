@@ -2,7 +2,8 @@ import {
   mount
 } from '@vue/test-utils'
 import {
-  setStatus
+  setStatus,
+  getStatus
 } from '@/interfaces/Driver.js';
 
 
@@ -12,6 +13,7 @@ jest.mock('@/interfaces/Driver.js', () => {
     __esModule: true,
     ...originalModule,
     setStatus: jest.fn(),
+    getStatus: jest.fn().mockReturnValue(-6)
   }
 });
 
@@ -28,6 +30,27 @@ function wrapperHelper(props) {
 
 
 describe("VolumeSlider.vue", () => {
+  it('Sets its status to match the device\'s', async () => {
+    const wrapper = await wrapperHelper({
+      min: -24,
+      max: 6,
+      command: 'AudioInputGain',
+      parameters: {
+        'Input': '1'
+      },
+      dataTag: 'vc-slider'
+    })
+    const slider = await wrapper.find('[data-id=vc-slider]');
+    expect(getStatus).toHaveBeenCalled()
+    expect(getStatus.mock.calls).toEqual([
+      ['AudioInputGain', {'Input': '1'}]
+    ]);
+    expect(wrapper.vm.level).toEqual(-6)
+  })
+})
+
+
+describe("VolumeSlider.vue", () => {
   it('Instantiates', async () => {
     const wrapper = await wrapperHelper({
       min: -24,
@@ -39,6 +62,7 @@ describe("VolumeSlider.vue", () => {
     })
   })
 })
+
 
 describe("VolumeSlider.vue", () => {
   it('Renders a range control', async () => {
@@ -52,6 +76,6 @@ describe("VolumeSlider.vue", () => {
       dataTag: 'vc-slider'
     })
     const slider = await wrapper.find('[data-id=vc-slider]');
-    expect(slider.tagName).toEqual('input');
+    expect(slider.wrapperElement.nodeName).toEqual('INPUT');
   })
 })
