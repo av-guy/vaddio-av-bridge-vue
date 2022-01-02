@@ -1,16 +1,5 @@
 {
   "rules": {
-    "chairs": {
-      "$chair": {
-        "text": {
-          ".read": "auth.uid != null",
-          ".write": "auth.uid != null",
-          ".validate": "newData.isString() && newData.val().length < 50"
-        },
-        "$other": {
-          ".validate": false
-        }
-      }
-    }
+
   }
 }
