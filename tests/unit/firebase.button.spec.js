@@ -1,3 +1,5 @@
+// noinspection ES6CheckImport
+
 import {
   mount
 } from '@vue/test-utils'
@@ -22,11 +24,11 @@ import FirebaseLoginButton from '@/components/FirebaseLoginButton'
 
 
 function wrapperHelper(props) {
-  const wrapper = mount(FirebaseLoginButton, {
-    propsData: props,
-    mocks: {},
-  })
-  return wrapper
+  // noinspection JSCheckFunctionSignatures
+    return mount(FirebaseLoginButton, {
+        propsData: props,
+        mocks: {},
+    })
 }
 
 

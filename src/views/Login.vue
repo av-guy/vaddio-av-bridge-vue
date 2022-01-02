@@ -25,7 +25,7 @@ export default {
 }
 
 .vc-err-msg {
-  font-family: Poppins-Bold;
+  font-family: Poppins-Bold, sans-serif;
   margin-left: 30px;
   margin-top: 35px;
 }
@@ -35,7 +35,7 @@ export default {
 }
 
 .vc-login-bg {
-  background: linear-gradient(309deg, #e0e2db, #255f85, #d16014);
+  background: linear-gradient(309deg, #12301e, #477a5a, #FFFFFF);
   background-size: 1000% 1000%;
   width: 100%;
   min-height: 800px;
@@ -46,15 +46,15 @@ export default {
 }
 
 .vc-login-button {
-  font-family: Poppins-Bold;
+  font-family: Poppins-Bold, sans-serif;
   padding: 12px;
-  background: linear-gradient(309deg, #AA4465, #255F85, #D16014);
-  background-size: 400% 400%;
+  background: linear-gradient(309deg, #12301e, #12391e, #53a350);
   background-position: 0%;
+  background-size: 400% 400%;
   margin-top: 45px;
   border-radius: 25px;
-  width: 88%;
   border: none;
+  width: 88%;
   left: 18%;
   color: white;
   font-size: 20px;
@@ -67,7 +67,7 @@ export default {
 }
 
 .vc-login-button:focus, .vc-login-button:hover {
-  background-position: 100% 15%;
+  background-position: 50% 15%;
   box-shadow: 5px 5px 20px gray;
   outline: none;
 }
@@ -110,7 +110,7 @@ export default {
 }
 
 .vc-input {
-  font-family: Poppins-Regular;
+  font-family: Poppins-Regular, sans-serif;
   font-size: 15px;
   display: block;
   width: 85%;
@@ -123,7 +123,7 @@ export default {
 }
 
 .vc-input:focus {
-  border-bottom: 3px solid #255F85;
+  border-bottom: 3px solid #f78e25;
   outline: none;
 }
 

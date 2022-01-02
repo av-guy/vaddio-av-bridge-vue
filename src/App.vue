@@ -27,7 +27,7 @@
 
 #app {
   height: 100vh;
-  font-family: Poppins-Regular;
+  font-family: Poppins-Regular, sans-serif;
   padding: 0;
   margin: 0;
 }

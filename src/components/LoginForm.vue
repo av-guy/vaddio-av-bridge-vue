@@ -111,7 +111,7 @@ export default {
   },
   methods: {
     /**
-    * Routes user to app if they have been succesfully validated.
+    * Routes user to app if they have been successfully validated.
     * @arg status - true or false value indicating login status
     */
     handleSuccess(status) {
@@ -120,9 +120,6 @@ export default {
       } else {
         this.errorMessage = 'Incorrect Email or Password';
       }
-    },
-    triggerFocus(status) {
-        this.emailFocused = status;
     },
     /**
     * handleCredentials checks to see if the email and password are valid.
