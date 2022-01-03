@@ -1,5 +1,11 @@
 {
   "rules": {
-
+    "chairs": {
+      "$chair": {
+        ".read": "auth.uid != null",
+        ".write": "auth.uid != null",
+        ".validate": "$chair.matches(/[1-18]/) && newData.hasChildren(['text']) || !newData.exists()"
+      }
+    }
   }
 }
